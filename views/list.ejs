@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+    <title>TodoList</title>
+</head>
+<body>
+    <div class="head">
+        <div class="head-box">
+            <h1><%= KindOfDay %></h1>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="form">
+            <ul>
+                <% for( i=0 ; i < newListItems.length;i++){ %>
+                    <li>
+                        <input type="checkbox">
+                        <span><%= newListItems[i] %></span>
+                        <button class="delete-btn">Delete</button>
+                    </li>
+                <% } %>
+            </ul>
+            <div class="form-action">
+                <form action="/" method="post">
+                    <input class="new-input" type="text" name="newItem" autocomplete="off" placeholder="New item">
+                    <button type="submit">+</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="made-by-card">
+        <p><a href="https://rohitdeka.me" target="_blank">Made by Rohit Deka</a></p>
+    </div>
+
+    <script src="/index.js"></script>
+</body>
+</html>
