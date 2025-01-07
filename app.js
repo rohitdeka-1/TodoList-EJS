@@ -16,7 +16,7 @@ let newListItems = [];
 app.get("/", (req, res) => {
     let options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
     let today = new Date();
-    let formatter = new Intl.DateTimeFormat("en-US", { ...options, timeZone: "Asia/Kolkata" });
+    let day = today.toLocaleDateString("en-us", options, timeZone: "Asia/Kolkata");
     res.render("list", { KindOfDay: day, newListItems: newListItems });
 });
 
